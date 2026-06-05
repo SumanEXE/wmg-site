@@ -7,7 +7,8 @@
   <meta name="description" content="One operator, two disciplines: marketing that performs and the digital systems behind it that scale. Built for founder-led brands.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Variable Fraunces with full weight range (needed for weight 370) -->
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
   <style>
     /* =========================================================
        DESIGN TOKENS
@@ -33,6 +34,10 @@
       --border-strong: rgba(33, 28, 23, 0.18);
       --border-dark: rgba(244, 239, 230, 0.10);
       --shadow-card: 0 1px 3px rgba(33, 28, 23, 0.04);
+
+      /* Intro animation tokens */
+      --red:   #C2563B;   /* matches --terracotta */
+      --paper: #F4EFE6;   /* matches --cream-bg */
 
       --container: 1120px;
       --radius-btn: 8px;
@@ -474,9 +479,126 @@
       .reveal { opacity: 1; transform: none; }
       html { scroll-behavior: auto; }
     }
+
+    /* =========================================================
+       LOAD-IN INTRO ANIMATION
+       ========================================================= */
+    .wmg-intro {
+      position: fixed; inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      isolation: isolate;
+    }
+
+    /* black sheet that slides away */
+    .wmg-intro__overlay {
+      position: absolute; inset: 0;
+      background: var(--ink);
+      z-index: 1;
+    }
+
+    /* the animated word — sits above the overlay */
+    .wmg-intro__word {
+      position: absolute; top: 0; left: 0;
+      font-family: 'Fraunces', serif;
+      font-weight: 370;
+      font-variation-settings: "opsz" 144;
+      font-size: 120px;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      display: inline-flex;
+      align-items: baseline;
+      white-space: nowrap;
+      color: var(--paper);
+      z-index: 2;
+      transform-origin: center center;
+      transform: translate(0, 0); /* set by JS */
+      will-change: transform;
+    }
+
+    .wmg-l { position: relative; display: inline-block; }
+
+    /* gap letters start hidden, slide open */
+    .wmg-l.gap {
+      color: var(--red);
+      max-width: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: color .7s ease;
+    }
+    /* helper class used only during JS measurement */
+    .wmg-intro__word.measure .wmg-l.gap {
+      max-width: 0.9em; opacity: 1; overflow: visible;
+    }
+
+    /* core letters: paper base + red ::after copy that wipes in */
+    .wmg-l.core { color: var(--paper); }
+    .wmg-l.core::after {
+      content: attr(data-letter);
+      position: absolute; left: 0; top: 0;
+      color: var(--red);
+      /* zero-width visible area anchored at the LEFT overflow line */
+      clip-path: inset(-50% 120% -50% -20%);
+      transition: color .7s ease;
+      pointer-events: none;
+    }
+
+    /* trigger states added by JS */
+    .wmg-intro.is-playing .wmg-l.core::after { animation: wmg-fill .45s cubic-bezier(.65,0,.35,1) forwards; }
+    .wmg-intro.is-playing .wmg-l.l-w::after { animation-delay: .35s; }
+    .wmg-intro.is-playing .wmg-l.l-m::after { animation-delay: .60s; }
+    .wmg-intro.is-playing .wmg-l.l-g::after { animation-delay: .85s; }
+    @keyframes wmg-fill { to { clip-path: inset(-50% -20% -50% -20%); } }
+
+    .wmg-intro.is-playing .wmg-l.gap { animation: wmg-open .55s cubic-bezier(.34,1.4,.64,1) forwards; }
+    .wmg-intro.is-playing .wmg-l.l-h { animation-delay: 1.55s; }
+    .wmg-intro.is-playing .wmg-l.l-o { animation-delay: 1.65s; }
+    .wmg-intro.is-playing .wmg-l.l-a { animation-delay: 1.75s; }
+    .wmg-intro.is-playing .wmg-l.l-u { animation-delay: 1.85s; }
+    .wmg-intro.is-playing .wmg-l.l-y { animation-delay: 1.95s; }
+    @keyframes wmg-open {
+      0%   { max-width: 0;     opacity: 0; }
+      60%  {                   opacity: 1; }
+      100% { max-width: 0.9em; opacity: 1; }
+    }
+
+    /* red → ink as it slides home */
+    .wmg-intro.is-exiting .wmg-l.core::after { color: var(--ink); }
+    .wmg-intro.is-exiting .wmg-l.gap         { color: var(--ink); }
+
+    /* overlay slides off */
+    .wmg-intro.is-playing .wmg-intro__overlay {
+      animation: wmg-overlay-out 1s 3.7s cubic-bezier(.77,0,.18,1) forwards;
+    }
+    @keyframes wmg-overlay-out { to { transform: translateY(-101%); } }
+
+    /* tidy-up at the end */
+    .wmg-intro.is-done { display: none; }
+
+    /* respect motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      .wmg-intro { display: none !important; }
+    }
   </style>
 </head>
 <body>
+
+  <!-- ============================================================
+       LOAD-IN INTRO ANIMATION
+       ============================================================ -->
+  <div class="wmg-intro" id="wmgIntro" aria-hidden="true">
+    <div class="wmg-intro__overlay"></div>
+    <div class="wmg-intro__word" id="wmgIntroWord">
+      <span class="wmg-l core l-w" data-letter="w">w</span>
+      <span class="wmg-l gap  l-h">h</span>
+      <span class="wmg-l gap  l-o">o</span>
+      <span class="wmg-l core l-m" data-letter="m">m</span>
+      <span class="wmg-l gap  l-a">a</span>
+      <span class="wmg-l core l-g" data-letter="g">g</span>
+      <span class="wmg-l gap  l-u">u</span>
+      <span class="wmg-l gap  l-y">y</span>
+    </div>
+  </div>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
@@ -914,6 +1036,77 @@
         });
       }, { threshold: 0.08 });
       sections.forEach(function (s, i) { if (i > 0) io.observe(s); });
+    })();
+
+    // ============================================================
+    // LOAD-IN INTRO ANIMATION
+    // ============================================================
+    (function () {
+      var SESSION_KEY = 'wmg-intro-seen';
+
+      // gates: prefers-reduced-motion + once-per-session
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      if (sessionStorage.getItem(SESSION_KEY)) {
+        var el = document.getElementById('wmgIntro');
+        if (el) el.remove();
+        return;
+      }
+
+      var intro  = document.getElementById('wmgIntro');
+      var word   = document.getElementById('wmgIntroWord');
+      var target = document.querySelector('.nav__brand');
+      if (!intro || !word || !target) return;
+
+      function run() {
+        // measure in the FULLY-EXPANDED state so landing math uses final width
+        word.classList.add('measure');
+
+        requestAnimationFrame(function () {
+          var tRect = target.getBoundingClientRect();
+          var wRect = word.getBoundingClientRect();
+
+          var centerX = window.innerWidth  / 2;
+          var centerY = window.innerHeight / 2;
+          var tCx = tRect.left + tRect.width  / 2;
+          var tCy = tRect.top  + tRect.height / 2;
+          var scale = tRect.height / wRect.height;
+
+          word.classList.remove('measure');
+
+          // place big and centered (no transition yet)
+          word.style.transition = 'none';
+          word.style.transform =
+            'translate(' + centerX + 'px, ' + centerY + 'px) translate(-50%, -50%) scale(1)';
+          void word.offsetWidth; // force reflow
+
+          intro.classList.add('is-playing');
+
+          // arm the slide transition on the next frame
+          requestAnimationFrame(function () {
+            word.style.transition = 'transform 1.1s cubic-bezier(.7,0,.2,1)';
+          });
+
+          // exit: slide+scale onto the header logo, red → ink
+          setTimeout(function () {
+            word.style.transform =
+              'translate(' + tCx + 'px, ' + tCy + 'px) translate(-50%, -50%) scale(' + scale + ')';
+            intro.classList.add('is-exiting');
+          }, 2700);
+
+          // remove from layer stack once everything has landed
+          setTimeout(function () {
+            intro.classList.add('is-done');
+            sessionStorage.setItem(SESSION_KEY, '1');
+          }, 4800);
+        });
+      }
+
+      // wait for Fraunces to load before measuring
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(function () { requestAnimationFrame(run); });
+      } else {
+        window.addEventListener('load', function () { setTimeout(run, 150); });
+      }
     })();
   </script>
 </body>
