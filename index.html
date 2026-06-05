@@ -514,6 +514,7 @@
       transform-origin: center center;
       transform: translate(0, 0); /* set by JS */
       will-change: transform;
+      visibility: hidden; /* hidden until JS positions it */
     }
 
     .wmg-l { position: relative; display: inline-block; }
@@ -1058,6 +1059,9 @@
       if (!intro || !word || !target) return;
 
       function run() {
+        // hide the real nav brand so it doesn't double up with the animated word
+        target.style.visibility = 'hidden';
+
         // measure in the FULLY-EXPANDED state so landing math uses final width
         word.classList.add('measure');
 
@@ -1073,10 +1077,11 @@
 
           word.classList.remove('measure');
 
-          // place big and centered (no transition yet)
+          // place big and centered (no transition yet), then reveal
           word.style.transition = 'none';
           word.style.transform =
             'translate(' + centerX + 'px, ' + centerY + 'px) translate(-50%, -50%) scale(1)';
+          word.style.visibility = 'visible';
           void word.offsetWidth; // force reflow
 
           intro.classList.add('is-playing');
@@ -1093,9 +1098,10 @@
             intro.classList.add('is-exiting');
           }, 2700);
 
-          // remove from layer stack once everything has landed
+          // remove from layer stack once everything has landed, restore nav brand
           setTimeout(function () {
             intro.classList.add('is-done');
+            target.style.visibility = '';
             sessionStorage.setItem(SESSION_KEY, '1');
           }, 4800);
         });
