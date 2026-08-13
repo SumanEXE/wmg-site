@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Whomaguy — Digital workshop for founder-led businesses</title>
-  <meta name="description" content="One operator, two disciplines: marketing that performs and the digital systems behind it that scale. Built for founder-led brands.">
+  <title>Whomaguy — AI Voice Receptionist, AI SEO &amp; Social Media Marketing</title>
+  <meta name="description" content="Anna, our AI voice receptionist, answers every call, books appointments in real time, transfers the urgent ones, and texts customers back — 24/7. Call (518) 851-8844 to try her. Also: AI SEO and social media marketing.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Variable Fraunces with full weight range (needed for weight 370) -->
@@ -200,6 +200,10 @@
       transition: gap 180ms ease;
     }
     .link-arrow:hover { gap: 10px; text-decoration: underline; text-underline-offset: 4px; }
+    .link-arrow--dark { color: var(--terracotta-soft); }
+    .link-arrow--dark:hover { color: #F1C4B4; }
+    .link-arrow--dark-sm { color: var(--cream-muted); font-size: 14px; }
+    .link-arrow--dark-sm:hover { color: var(--terracotta-soft); }
 
     /* =========================================================
        NAVIGATION
@@ -349,6 +353,16 @@
       padding: 6px 12px; border-radius: 6px;
       font-size: 13px; font-weight: 500; line-height: 1.2;
     }
+    .wing__h3--flagship { font-size: 32px; }
+    .wing__badge {
+      display: inline-block; margin-bottom: 14px;
+      font-family: 'IBM Plex Mono', monospace; font-weight: 500;
+      font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--terracotta-soft);
+    }
+    .wings--secondary { margin-top: 56px; padding-top: 56px; border-top: 0.5px solid var(--border-dark); }
+    .wings--secondary .wing__h3 { font-size: 22px; color: var(--cream-muted); }
+    .wings--secondary .wing__body { font-size: 15px; }
 
     /* =========================================================
        FEATURED OFFERING  (Section 5)
@@ -628,12 +642,11 @@
         <a href="#top" class="nav__brand" aria-label="Whomaguy — home">Whomaguy</a>
         <nav class="nav__links--right" aria-label="Primary navigation">
           <div class="nav__links">
-            <a href="#how-we-work" class="nav__link">How it works</a>
-            <a href="#featured" class="nav__link">Pricing</a>
+            <a href="#what-we-do" class="nav__link">Services</a>
+            <a href="#featured" class="nav__link">Meet Anna</a>
             <a href="#faq" class="nav__link">FAQ</a>
-            <a href="#footer-cta" class="nav__link">Work with us</a>
           </div>
-          <a href="#footer-cta" class="btn-nav nav__cta">Book a call</a>
+          <a href="tel:+15188518844" class="btn-nav nav__cta">Call Anna</a>
         </nav>
         <button class="nav__menu-btn" id="menuOpen" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -651,13 +664,12 @@
       </button>
     </div>
     <div class="mobile-menu__list">
-      <a href="#how-we-work">How it works</a>
-      <a href="#featured">Pricing</a>
+      <a href="#what-we-do">Services</a>
+      <a href="#featured">Meet Anna</a>
       <a href="#faq">FAQ</a>
-      <a href="#footer-cta">Work with us</a>
     </div>
     <div class="mobile-menu__cta">
-      <a href="#footer-cta" class="btn-primary btn-primary--large">Book a call</a>
+      <a href="tel:+15188518844" class="btn-primary btn-primary--large">Call Anna — (518) 851-8844</a>
     </div>
   </div>
 
@@ -671,32 +683,25 @@
       <div class="container">
         <div class="hero__grid">
           <div class="hero__text">
-            <span class="eyebrow">Digital workshop for founder-led businesses</span>
+            <span class="eyebrow">AI Voice Receptionist</span>
             <h1 class="h1 mt-20" id="hero-h1">
-              you know the friction<br>
-              whomaguy knows digital tools<br>
-              <span class="hero__title-emph">we fabricate <strong>your</strong> solution</span><span></span>
+              Missed calls cost you customers.<br>
+              Anna never misses one.<br>
+              <span class="hero__title-emph">Call her and see.</span>
             </h1>
             <p class="body-large mt-24 prose-540">
-              Whomaguy is a consulting practice for founder-led brands — operators who built the thing, run the thing, and know exactly where the friction is. Two disciplines, one relationship: marketing that actually performs, and the digital systems behind it that actually scale. No agency theater &amp; no vendor sprawl. No discovery call about a discovery call. Just solutions from hour one.
+              Anna is Whomaguy's AI voice receptionist. She answers every call in real time, books the appointment, transfers the urgent ones to your team, and follows up by text — no hold music, no voicemail. She's just our demo: her name, voice, and script are fully customized to your business before she ever answers your line.
             </p>
             <div class="hero__buttons mt-28">
-              <a href="#footer-cta" class="btn-primary">Book an one hr call</a>
-              <a href="#what-we-do" class="btn-secondary">See what we do</a>
-            </div>
-            <div class="mt-28">
-              <a href="/receptionist" class="audio-chip" aria-label="Play sample: hear a live call, 42 seconds. Opens AI Receptionist page.">
-                <span class="audio-chip__play" aria-hidden="true">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>
-                </span>
-                <span class="audio-chip__wave" aria-hidden="true">
-                  <span style="height:6px"></span><span style="height:12px"></span><span style="height:16px"></span>
-                  <span style="height:10px"></span><span style="height:18px"></span><span style="height:14px"></span>
-                  <span class="dim" style="height:8px"></span><span class="dim" style="height:6px"></span>
-                </span>
-                <span class="audio-chip__meta">Call our receptionist agent Guy</span>
+              <a href="tel:+15188518844" class="btn-primary" aria-label="Call Anna now at (518) 851-8844">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Call Anna — (518) 851-8844
               </a>
+              <a href="#featured" class="btn-secondary">See what she can do</a>
             </div>
+            <p class="caption mt-20" style="color:var(--ink-faint); max-width:480px;">
+              It's a live line, not a recording. Ask her to book an appointment, transfer your call, or text you back — she'll do all three.
+            </p>
           </div>
           <div class="hero__media-wrap" aria-hidden="true">
             <!-- Replace src with final hero photograph (~960x1200, warm interior, hands, shop at golden hour) -->
@@ -716,20 +721,20 @@
         <div class="who__grid">
           <div>
             <span class="eyebrow">Who this is for</span>
-            <h2 class="h2 mt-20" id="who-h2">Built for the awkward stage.</h2>
+            <h2 class="h2 mt-20" id="who-h2">Built for businesses that live on the phone.</h2>
           </div>
           <div>
             <p class="body-large ink">
-              You're past scrappy. But you're not yet big enough to hire a dedicated CMO or CTO. You're somewhere between $500K and $10M in revenue, and the gap between what your business needs digitally and what you have time to build yourself widens every quarter. That gap is <strong>our</strong> work.
+              If a ringing phone means a booking, a job, or a sale, every call that goes unanswered is a customer calling the next name on the list. Anna picks up so that doesn't happen — whether it's your busiest hour or 2am.
             </p>
             <h3 class="h3 mt-32">This is probably you if:</h3>
             <ul class="em-list">
-              <li>You're the founder. The buck stops with you.</li>
-              <li>Your CMO was determined by age (ascending).</li>
-              <li>That marketing kinda works, but you can't quite explain why.</li>
-              <li>Your tech stack is a couple of apps and a prayer.</li>
-              <li>Your dashboards lie to you, or they don't exist at all.</li>
-              <li>You need a builder, not a slide deck about building.</li>
+              <li>Calls go to voicemail during rush, lunch, or after hours.</li>
+              <li>Your team is stretched between the job in front of them and the phone.</li>
+              <li>You've lost work because nobody picked up in time.</li>
+              <li>You want every call followed up, even the ones you miss.</li>
+              <li>You're tired of answering the same handful of questions all day.</li>
+              <li>You want appointments booked without anyone lifting a finger.</li>
             </ul>
           </div>
         </div>
@@ -743,39 +748,65 @@
       <div class="container">
         <div class="stack-720 center">
           <span class="eyebrow dark">What we do</span>
-          <h2 class="h2 mt-20" id="ww-h2">Two disciplines, one relationship.</h2>
+          <h2 class="h2 mt-20" id="ww-h2">Three ways we help you grow — one call to start.</h2>
         </div>
-        <div class="wings">
-          <!-- Wing 1: Marketing -->
-          <div>
-            <h3 class="wing__h3">Marketing that performs.</h3>
-            <p class="wing__body">
-              We rebuild the marketing engine so you can stop guessing. Attribution that actually attributes. Funnels that show which lever moved which number. Ad accounts that don't burn budget on autopilot. Content systems that turn the work you're already doing into compounding clients.
-            </p>
-            <div class="mt-24">
-              <p class="sublabel-mono">Common starting points</p>
-              <div class="wing__chips">
-                <span class="chip">Content engine setup</span>
-                <span class="chip">Attribution rebuild</span>
-                <span class="chip">Paid media audit + reset</span>
-                <span class="chip">Lifecycle email overhaul</span>
-              </div>
+
+        <!-- Flagship: AI Voice Receptionist -->
+        <div class="mt-40">
+          <span class="wing__badge">Flagship offer</span>
+          <h3 class="wing__h3 wing__h3--flagship">AI Voice Receptionist</h3>
+          <p class="wing__body" style="max-width:640px;">
+            Anna answers every call, books appointments in real time, transfers the urgent ones, and follows up by text — all without a hold button. Call her right now: <a href="tel:+15188518844" style="color:var(--terracotta-soft); text-decoration:underline; text-underline-offset:3px;">(518) 851-8844</a>.
+          </p>
+          <div class="mt-24">
+            <p class="sublabel-mono">What she does</p>
+            <div class="wing__chips">
+              <span class="chip">Real-time appointment setting</span>
+              <span class="chip">Call transfer</span>
+              <span class="chip">Text follow-up</span>
+              <span class="chip">Fully customizable</span>
             </div>
           </div>
-          <!-- Wing 2: Systems -->
+          <div class="mt-24">
+            <a href="#featured" class="link-arrow link-arrow--dark" aria-label="See pricing and demo prompts for the AI Receptionist">
+              See pricing &amp; demo prompts
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Secondary offers -->
+        <div class="wings wings--secondary">
           <div>
-            <h3 class="wing__h3">Systems that scale.</h3>
+            <h3 class="wing__h3">AI SEO</h3>
             <p class="wing__body">
-              We build the modern digital infrastructure your business runs on. AI that picks up the phone when nobody else can. Internal tools that compress what was days of manual work into a few buttons. Integrations that finally make a hodgepodge of tools talk to each other. A data layer that turns "Uh - I think" into "I know."
+              We make sure AI answer engines and search results actually surface your business — structured content, technical fixes, and the citations that get you mentioned before the click even happens.
             </p>
             <div class="mt-24">
-              <p class="sublabel-mono">Common starting points</p>
               <div class="wing__chips">
-                <span class="chip">AI voice agents</span>
-                <span class="chip">Internal tooling</span>
-                <span class="chip">Integrations &amp; automations</span>
-                <span class="chip">Data reporting + infrastructure</span>
+                <span class="chip">Technical SEO</span>
+                <span class="chip">AI answer visibility</span>
+                <span class="chip">Local search</span>
               </div>
+            </div>
+            <div class="mt-24">
+              <a href="#footer-cta" class="link-arrow link-arrow--dark-sm">Ask about AI SEO</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="wing__h3">Social Media Marketing</h3>
+            <p class="wing__body">
+              Consistent posting, on-brand content, and a content calendar that doesn't live entirely in your head. We keep your feed active while you run the business.
+            </p>
+            <div class="mt-24">
+              <div class="wing__chips">
+                <span class="chip">Content calendar</span>
+                <span class="chip">Posting &amp; scheduling</span>
+                <span class="chip">Brand-consistent creative</span>
+              </div>
+            </div>
+            <div class="mt-24">
+              <a href="#footer-cta" class="link-arrow link-arrow--dark-sm">Ask about social media</a>
             </div>
           </div>
         </div>
@@ -788,54 +819,49 @@
     <section id="featured" aria-labelledby="featured-h2">
       <div class="container">
         <div class="stack-680 center">
-          <span class="eyebrow">Productized Solutions</span>
-          <h2 class="h2 mt-20" id="featured-h2">The 24/7 receptionist: Santos</h2>
+          <span class="eyebrow">Productized Solution</span>
+          <h2 class="h2 mt-20" id="featured-h2">Meet Anna.</h2>
           <p class="body-large mt-24 prose-600" style="margin-left:auto;margin-right:auto;">
-            Some problems we've seen enough times that we built them into fixed-scope productized service. Specific outcomes, predictable price, no proposal back-and-forth.
+            Anna is our live demo AI receptionist — a real phone line, answering real calls, right now. Before she ever answers yours, we customize her name, voice, personality, and script to match your business. Fixed scope, predictable price, no proposal back-and-forth.
           </p>
         </div>
 
         <article class="card-feature" aria-labelledby="featured-card-h3">
           <div class="card-feature__grid">
             <div>
-              <span class="eyebrow">AI Receptionist · Appointment based services</span>
+              <span class="eyebrow">Live demo · Real phone line</span>
               <h3 class="h3 h3-card mt-16" id="featured-card-h3">
-                Picks up every call. Books the appointment. Sounds like part of the crew.
+                Call (518) 851-8844 and put her to the test.
               </h3>
               <p class="body mt-16">
-                Two weeks to live. $2,450 setup. $450/month, all in — voice minutes, hosting, and ongoing tuning included.
+                Two weeks to live. $1,450 setup, $450/month all in — voice minutes, hosting, and ongoing tuning included.
               </p>
               <div class="mt-24">
-                <a href="/receptionist" class="link-arrow" aria-label="Learn more about the AI Receptionist">
-                  Learn more
+                <a href="tel:+15188518844" class="link-arrow" aria-label="Call Anna now at (518) 851-8844">
+                  Call Anna now
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
                 </a>
               </div>
             </div>
             <div class="audio-chip-stack">
-              <a href="/receptionist#sample-1" class="audio-chip" aria-label="Play sample: Booking a Friday fade, 42 seconds">
-                <span class="audio-chip__play" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg></span>
-                <span class="audio-chip__wave" aria-hidden="true">
-                  <span style="height:6px"></span><span style="height:14px"></span><span style="height:18px"></span>
-                  <span style="height:10px"></span><span style="height:16px"></span><span style="height:12px"></span>
-                  <span class="dim" style="height:8px"></span><span class="dim" style="height:6px"></span>
-                </span>
-                <span class="audio-chip__meta">Throw him a curveball</span>
+              <p class="sublabel-mono" style="color:var(--ink-faint); margin-bottom:2px;">Try these on the call</p>
+              <a href="tel:+15188518844" class="audio-chip" aria-label="Call Anna and ask her to book an appointment. Phone number (518) 851-8844.">
+                <span class="audio-chip__play" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+                <span class="audio-chip__meta">"Book me an appointment" — real-time scheduling</span>
               </a>
-              <a href="/receptionist#sample-2" class="audio-chip" aria-label="Play sample: Walk-in price question, 31 seconds">
-                <span class="audio-chip__play" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg></span>
-                <span class="audio-chip__wave" aria-hidden="true">
-                  <span style="height:8px"></span><span style="height:14px"></span><span style="height:10px"></span>
-                  <span style="height:18px"></span><span style="height:12px"></span><span style="height:16px"></span>
-                  <span class="dim" style="height:8px"></span><span class="dim" style="height:6px"></span>
-                </span>
-                <span class="audio-chip__meta">Ask - anything!</span>
+              <a href="tel:+15188518844" class="audio-chip" aria-label="Call Anna and ask her to transfer your call. Phone number (518) 851-8844.">
+                <span class="audio-chip__play" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+                <span class="audio-chip__meta">"Transfer me" — routes to your team, urgent calls first</span>
+              </a>
+              <a href="tel:+15188518844" class="audio-chip" aria-label="Call Anna and hang up to get a text back. Phone number (518) 851-8844.">
+                <span class="audio-chip__play" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+                <span class="audio-chip__meta">Hang up — she follows up by text, seconds later</span>
               </a>
             </div>
           </div>
         </article>
 
-        <small class="featured-footnote">More productized offerings launching later this year.</small>
+        <small class="featured-footnote">Anna is the demo. Your version gets her own name, voice, and script — plus AI SEO and social media if you need them.</small>
       </div>
     </section>
 
@@ -846,9 +872,9 @@
       <div class="container">
         <div class="stack-720 how">
           <span class="eyebrow">How we work</span>
-          <h2 class="h2 mt-20" id="how-h2">Diagnose. Build. Stay to make sure it holds.</h2>
+          <h2 class="h2 mt-20" id="how-h2">Diagnose the gap. Build the system. Stay to tune it.</h2>
           <p class="body-large mt-24 prose-640" style="margin-left:auto;margin-right:auto;">
-            The first conversation is up to one hour. You tell us what's broken; we tell how it can be fixed. If not by us then where/who to start with. If we can, you get a scoped fixed-price proposal in 48 hours — no retainer trap, no vendor lock-in, no team you'll never meet. Most engagements run 4 to 12 weeks, and some turn into ongoing partnerships. We let the work decide.
+            We start with a short call about where calls, leads, or visibility are slipping through the cracks. If an AI receptionist, AI SEO, or social media system is the fix, you get a scoped fixed-price proposal in 48 hours — no retainer trap, no vendor lock-in, no team you'll never meet. Most receptionist builds are live in two weeks; we stay on to tune scripts, keywords, and content as your business changes.
           </p>
           <div class="mt-32">
             <a href="#footer-cta" class="btn-primary">Book the hour call</a>
@@ -868,12 +894,12 @@
           </div>
           <div>
             <span class="eyebrow dark">About the founder</span>
-            <h2 class="h2 mt-20" id="about-h2">One operator. No account manager.</h2>
+            <h2 class="h2 mt-20" id="about-h2">One founder. Every call goes to him.</h2>
             <p class="body mt-24 prose-560">
               Whomaguy is run by <strong style="color:var(--ink-fg); font-weight:500;">Suman Humagain</strong>. I spent 8 years inside the service and e-commerce industry, creating marketing and business systems for businesses like Kasuri and Les Indiennes, before realizing the founders I most wanted to work with were the ones who couldn't afford a full agency or to wait either.
             </p>
             <p class="body mt-16 prose-560">
-              So whomaguy was built. The work is his. The thinking is his. You won't be passed off to an account manager, because there isn't one.
+              So Whomaguy was built to run the same way: one person, start to finish. Suman leads every project himself — he's the one who answers when you call, and the one making sure you're taken care of.
             </p>
             <div class="about__links">
               <a href="https://www.linkedin.com/in/suman-humagain/" target="_blank" rel="noopener">LinkedIn</a>
@@ -893,10 +919,10 @@
           <span class="eyebrow">Recent work</span>
           <h2 class="h2 h2-sm mt-20" id="proof-h2">Built for and with operators like:</h2>
           <p class="body mt-24 prose-600" style="margin-left:auto;margin-right:auto;">
-            Current and recent engagements span fashion boutiques, independent hospitality, service, and creator-led brands. Detailed case studies launching soon alongside our first publicised wins.
+            Recent engagements span salons, clinics, contractors, and service businesses putting their first AI receptionist to work — plus AI SEO and social media projects alongside them. Detailed case studies launching soon.
           </p>
           <div class="quote-block">
-            <p class="quote">"He didn't pitch us a deck. He pitched us a number, and then hit it."</p>
+            <p class="quote">"Suman doesn't feel like a vendor — he feels like part of the team. Whatever's broken in our day-to-day, he's already fixing it before we've finished explaining the problem."</p>
             <span class="quote-attr">Founder, independent hospitality group</span>
           </div>
         </div>
@@ -918,7 +944,28 @@
               What does this actually cost?
               <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
-            <p class="faq-item__answer">Most engagements are between $4,000 and $20,000 depending on scope. Productized offerings have fixed pricing. We send a real number before you sign anything.</p>
+            <p class="faq-item__answer">The AI Voice Receptionist is $1,450 to set up and $450/month, all in — voice minutes, hosting, and ongoing tuning included. AI SEO and social media pricing depends on scope; we send a real number before you sign anything.</p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              Can I change Anna's name and voice?
+              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <p class="faq-item__answer">Yes — Anna is just our demo. Before launch we customize the name, voice, personality, and script to match your business, so your customers hear your receptionist, not ours.</p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              What can Anna actually do?
+              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <p class="faq-item__answer">She answers calls in real time, books appointments straight into your calendar, transfers urgent calls to your team, and follows up by text. Call (518) 851-8844 and try all three yourself.</p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              Do you only do AI receptionists?
+              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <p class="faq-item__answer">No — it's our flagship offer, but we also run AI SEO and social media marketing for the same clients. Ask when you book a call.</p>
           </details>
           <details class="faq-item">
             <summary>
@@ -929,24 +976,10 @@
           </details>
           <details class="faq-item">
             <summary>
-              How do you handle the marketing-vs.-systems split?
-              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-            </summary>
-            <p class="faq-item__answer">Most engagements touch both. The two wings exist so we can scope clearly, not because the work splits cleanly in practice.</p>
-          </details>
-          <details class="faq-item">
-            <summary>
-              What if I just want a one-off deep audit?
-              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-            </summary>
-            <p class="faq-item__answer">That's offered as a productized engagement. Fixed price, 10 business days, written deliverable.</p>
-          </details>
-          <details class="faq-item">
-            <summary>
               Who do we NOT work with?
               <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
-            <p class="faq-item__answer">Pre-revenue founders, agencies hiring us to white-label, and anyone who needs three rounds of approval before a decision gets made.</p>
+            <p class="faq-item__answer">Businesses that don't take inbound calls or bookings, agencies hiring us to white-label, and anyone who needs three rounds of approval before a decision gets made.</p>
           </details>
         </div>
       </div>
@@ -958,15 +991,16 @@
     <section class="section--ink footer-cta" id="footer-cta" aria-labelledby="cta-h2">
       <div class="container">
         <div class="stack-640">
-          <h2 class="h2 footer-cta__h2" id="cta-h2">Ready to talk?</h2>
+          <h2 class="h2 footer-cta__h2" id="cta-h2">Ready to stop missing calls?</h2>
           <p class="body-large mt-20 prose-540" style="margin-left:auto;margin-right:auto;">
-            One conversation. Then a fixed proposal or a friendly no.
+            Call Anna to hear it live, or book a short call to talk it through.
           </p>
-          <div class="mt-32">
-            <a href="https://cal.com/" class="btn-primary btn-primary--large" target="_blank" rel="noopener">
+          <div class="hero__buttons mt-32" style="justify-content:center;">
+            <a href="https://cal.com/suman-humagain/quick-chat" class="btn-primary btn-primary--large" target="_blank" rel="noopener">
               Book the call
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
             </a>
+            <a href="tel:+15188518844" class="btn-secondary">Or call Anna — (518) 851-8844</a>
           </div>
         </div>
       </div>
@@ -980,13 +1014,13 @@
         <div class="footer__grid">
           <div>
             <span class="footer__brand-mark">Whomaguy</span>
-            <p class="footer__tag">Digital workshop for founder-led businesses</p>
+            <p class="footer__tag">AI Voice Receptionist, AI SEO &amp; Social Media Marketing</p>
           </div>
           <div>
             <p class="footer__heading">Site</p>
             <div class="footer__links">
-              <a href="#how-we-work">How it works</a>
-              <a href="#featured">Pricing</a>
+              <a href="#what-we-do">Services</a>
+              <a href="#featured">Meet Anna</a>
               <a href="#faq">FAQ</a>
               <a href="#footer-cta">Contact</a>
             </div>
