@@ -500,12 +500,16 @@
       z-index: 9999;
       pointer-events: none;
       isolation: isolate;
+      /* scoped to the intro only — site-wide palette is handled separately */
+      --wmg-bg:    #121617;
+      --wmg-start: #FEF8EC;
+      --wmg-fill:  #C1121F;
     }
 
     /* black sheet that slides away */
     .wmg-intro__overlay {
       position: absolute; inset: 0;
-      background: var(--ink);
+      background: var(--wmg-bg);
       z-index: 1;
     }
 
@@ -521,7 +525,7 @@
       display: inline-flex;
       align-items: baseline;
       white-space: nowrap;
-      color: var(--paper);
+      color: var(--wmg-start);
       z-index: 2;
       transform-origin: center center;
       transform: translate(0, 0); /* set by JS */
@@ -533,7 +537,7 @@
 
     /* gap letters start hidden, slide open */
     .wmg-l.gap {
-      color: var(--red);
+      color: var(--wmg-fill);
       max-width: 0;
       opacity: 0;
       overflow: hidden;
@@ -545,11 +549,11 @@
     }
 
     /* core letters: paper base + red ::after copy that wipes in */
-    .wmg-l.core { color: var(--paper); }
+    .wmg-l.core { color: var(--wmg-start); }
     .wmg-l.core::after {
       content: attr(data-letter);
       position: absolute; left: 0; top: 0;
-      color: var(--red);
+      color: var(--wmg-fill);
       /* zero-width visible area anchored at the LEFT overflow line */
       clip-path: inset(-50% 120% -50% -20%);
       transition: color .7s ease;
@@ -602,7 +606,7 @@
   <div class="wmg-intro" id="wmgIntro" aria-hidden="true">
     <div class="wmg-intro__overlay"></div>
     <div class="wmg-intro__word" id="wmgIntroWord">
-      <span class="wmg-l core l-w" data-letter="w">w</span>
+      <span class="wmg-l core l-w" data-letter="W">W</span>
       <span class="wmg-l gap  l-h">h</span>
       <span class="wmg-l gap  l-o">o</span>
       <span class="wmg-l core l-m" data-letter="m">m</span>
