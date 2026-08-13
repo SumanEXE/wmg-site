@@ -11,6 +11,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
   <style>
     /* =========================================================
+       CUSTOM FONT — UTNickel (logo + h1s)
+       ========================================================= */
+    @font-face {
+      font-family: 'UTNickel';
+      src: url('fonts/UTNickel.woff') format('woff'),
+           url('fonts/UTNickel.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* =========================================================
        DESIGN TOKENS
        Mirror the spec's Color Style names verbatim so they map
        1:1 to Framer Color Styles when the site moves over.
@@ -209,7 +221,7 @@
       display: flex; align-items: center; justify-content: space-between; gap: 24px;
     }
     .nav__brand {
-      font-family: 'Fraunces', serif; font-weight: 370; font-size: 23px;
+      font-family: 'UTNickel', 'Fraunces', serif; font-weight: 370; font-size: 23px;
       letter-spacing: -0.01em; color: var(--ink); line-height: 1;
     }
     .nav__links {
@@ -443,7 +455,7 @@
     }
     @media (min-width: 810px) { .footer__grid { grid-template-columns: 2fr 1fr 1fr; gap: 64px; } }
     .footer__brand-mark {
-      font-family: 'Fraunces', serif; font-weight: 370; font-size: 20px;
+      font-family: 'UTNickel', 'Fraunces', serif; font-weight: 370; font-size: 20px;
       color: var(--ink-fg);
     }
     .footer__tag { font-size: 13px; color: var(--cream-muted); margin-top: 8px; }
@@ -500,7 +512,7 @@
     /* the animated word — sits above the overlay */
     .wmg-intro__word {
       position: absolute; top: 0; left: 0;
-      font-family: 'Fraunces', serif;
+      font-family: 'UTNickel', 'Fraunces', serif;
       font-weight: 370;
       font-variation-settings: "opsz" 144;
       font-size: 120px;
@@ -609,7 +621,7 @@
   <header class="nav" id="nav" aria-label="Primary">
     <div class="container">
       <div class="nav__inner">
-        <a href="#top" class="nav__brand" aria-label="Whomaguy — home">whomaguy</a>
+        <a href="#top" class="nav__brand" aria-label="Whomaguy — home">Whomaguy</a>
         <nav class="nav__links--right" aria-label="Primary navigation">
           <div class="nav__links">
             <a href="#how-we-work" class="nav__link">How it works</a>
@@ -629,7 +641,7 @@
   <!-- Mobile menu overlay -->
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
     <div class="mobile-menu__head">
-      <span class="nav__brand">whomaguy</span>
+      <span class="nav__brand">Whomaguy</span>
       <button class="nav__menu-btn" id="menuClose" aria-label="Close menu">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
@@ -963,7 +975,7 @@
       <div class="container">
         <div class="footer__grid">
           <div>
-            <span class="footer__brand-mark">whomaguy</span>
+            <span class="footer__brand-mark">Whomaguy</span>
             <p class="footer__tag">Digital workshop for founder-led businesses</p>
           </div>
           <div>
