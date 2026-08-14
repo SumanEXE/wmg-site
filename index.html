@@ -279,18 +279,13 @@
     .hero__title-emph + span { color: var(--ink); }
     .hero__buttons { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
     .hero__media-wrap {
-      aspect-ratio: 4/5; max-width: 480px; margin-left: auto; width: 100%;
-      border-radius: var(--radius-card); overflow: hidden;
-      background: var(--cream-deep);
+      max-width: 480px; margin-left: auto; width: 100%;
     }
     @media (max-width: 809px) {
-      .hero__media-wrap { aspect-ratio: 4/5; margin: 32px 0 0; max-width: none; }
+      .hero__media-wrap { order: -1; margin: 0 auto 8px; max-width: 360px; }
     }
     .hero__media {
-      width: 100%; height: 100%; object-fit: cover; display: block;
-      background:
-        radial-gradient(circle at 30% 25%, rgba(193,18,31,0.18), transparent 55%),
-        linear-gradient(140deg, #C9B498 0%, #8C7355 55%, #4A3A2C 100%);
+      width: 100%; height: auto; object-fit: contain; display: block;
     }
     .hero__media-label {
       position: relative; height: 100%; display: flex; align-items: flex-end; padding: 24px;
@@ -707,7 +702,7 @@
             </p>
           </div>
           <div class="hero__media-wrap" aria-hidden="true">
-            <img src="hero.png" alt="" class="hero__media" style="object-fit:cover;">
+            <img src="hero-illustration.png" alt="" class="hero__media">
           </div>
         </div>
       </div>
